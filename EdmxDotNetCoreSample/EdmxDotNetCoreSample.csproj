@@ -4,12 +4,10 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="entityframework" Version="6.3.0-*" /> 
-    <Compile Include="..\EdmxDesignHost\Thing.cs" Link="Model\Thing.cs" />
-    <Compile Include="..\EdmxDesignHost\Entities.Context.cs" Link="Model\Entities.Context.cs" />
-    <Compile Include="..\EdmxDesignHost\Person.cs" Link="Model\Person.cs" />
-  </ItemGroup>
-  <ItemGroup>
+    <PackageReference Include="entityframework" Version="6.3.0-*" />
     <EntityDeploy Include="..\EdmxDesignHost\Entities.edmx" Link="Model\Entities.edmx" />
+    <Compile Include="..\EdmxDesignHost\Entities.Context.cs" Link="Model\Entities.Context.cs" />
+    <Compile Include="..\EdmxDesignHost\Thing.cs" Link="Model\Thing.cs" />
+    <Compile Include="..\EdmxDesignHost\Person.cs" Link="Model\Person.cs" />
   </ItemGroup>
 </Project>
