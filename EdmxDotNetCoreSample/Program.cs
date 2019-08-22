@@ -4,7 +4,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Xml;
 
-namespace EdmxDotNetCoreApp
+namespace EdmxDotNetCoreSample
 {
     class Program
     {

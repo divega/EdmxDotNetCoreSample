@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EdmxDotNetCoreApp.Entities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="EdmxDotNetCoreSample.Entities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Droids">
           <Key>
             <PropertyRef Name="Name" />
@@ -30,7 +30,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="EdmxDotNetCoreAppEntitiesStoreContainer">
+        <EntityContainer Name="EdmxDotNetCoreSampleEntitiesStoreContainer">
           <EntitySet Name="Droids" EntityType="Self.Droids" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="People" EntityType="Self.People" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_dbo_Droids_dbo_People_MasterName" Association="Self.FK_dbo_Droids_dbo_People_MasterName">
@@ -42,7 +42,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="EdmxDotNetCoreApp.Entities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="EdmxDotNetCoreSample.Entities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Thing">
           <Key>
             <PropertyRef Name="Name" />
@@ -60,7 +60,7 @@
         </EntityType>
         <Association Name="FK_dbo_Droids_dbo_People_MasterName">
           <End Role="People" Type="Self.Person" Multiplicity="0..1" />
-          <End Role="Droids" Type="EdmxDotNetCoreApp.Entities.Thing" Multiplicity="*" />
+          <End Role="Droids" Type="EdmxDotNetCoreSample.Entities.Thing" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="People">
               <PropertyRef Name="Name" />
@@ -71,7 +71,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Things" EntityType="EdmxDotNetCoreApp.Entities.Thing" />
+          <EntitySet Name="Things" EntityType="EdmxDotNetCoreSample.Entities.Thing" />
           <EntitySet Name="People" EntityType="Self.Person" />
           <AssociationSet Name="FK_dbo_Droids_dbo_People_MasterName" Association="Self.FK_dbo_Droids_dbo_People_MasterName">
             <End Role="People" EntitySet="People" />
@@ -83,9 +83,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="EdmxDotNetCoreAppEntitiesStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="EdmxDotNetCoreSampleEntitiesStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Things">
-            <EntityTypeMapping TypeName="EdmxDotNetCoreApp.Entities.Thing">
+            <EntityTypeMapping TypeName="EdmxDotNetCoreSample.Entities.Thing">
               <MappingFragment StoreEntitySet="Droids">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="OwnerName" ColumnName="MasterName" />
@@ -93,7 +93,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="People">
-            <EntityTypeMapping TypeName="EdmxDotNetCoreApp.Entities.Person">
+            <EntityTypeMapping TypeName="EdmxDotNetCoreSample.Entities.Person">
               <MappingFragment StoreEntitySet="People">
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>

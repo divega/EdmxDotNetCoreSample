@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EdmxDotNetCoreApp
+namespace EdmxDotNetCoreSample
 {
     using System;
     using System.Collections.Generic;
